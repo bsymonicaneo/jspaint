@@ -136,7 +136,7 @@ if (saveBtn) {
 document.getElementById("img1").addEventListener("click", imageLoadCanvas); // 클릭 이벤트
 const img = new Image();
 
-img.src = "img/owl-937740_640.jpg";
+img.src = "img/img1.jpg";
 function imageLoadCanvas() {
   console.log("click buntton");
   const ptrn = ctx.createPattern(img, "repeat"); // Create a pattern with this image, and set it to "repeat".
