@@ -142,6 +142,7 @@ function imageLoadCanvas() {
   const ptrn = ctx.createPattern(img, "repeat"); // Create a pattern with this image, and set it to "repeat".
   ctx.fillStyle = ptrn;
   ctx.fillRect(0, 0, canvas.width, canvas.height); // context.fillRect(x, y, width, height);
+  ctx.drawImage(img, 0, 0, 700, 700);
 }
 
 /* 텍스트 입력 기능 추가 <<<<< 0722 */
@@ -209,7 +210,8 @@ function getImageFiles(e) {
     img.onload = () => {
       // canvas.width = img.width;
       // canvas.height = img.height; <<<<<< 불러온 이미지를 캔버스에 맞게 리사이징 할 수 있도록 해보장
-      ctx.drawImage(img, 0, 0);
+      // ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, 0, 700, 700);
     };
   };
 
@@ -224,9 +226,3 @@ upBtn.addEventListener("click", () => input.click());
 if (input) {
   input.addEventListener("change", getImageFiles);
 }
-
-// 글자 입력 참고1 : https://developer.mozilla.org/ko/docs/Web/API/Canvas_API/Tutorial/Drawing_text
-// 글자 입력 참고2 : https://stackoverflow.com/questions/21011931/how-to-embed-an-input-or-textarea-in-a-canvas-element
-// 글자 입력 참고3 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=websearch&logNo=221571168786 // 한국블로그
-
-// 이미지 업로드 참고 : https://juni-official.tistory.com/209
